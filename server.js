@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 
 const URI = process.env.MONGODB_URI;
 
@@ -80,5 +80,5 @@ app.post('/api/contact', async (req, res) => {
   });
     
 app.listen(port, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+    console.log(`Server is running on port ${port}`);
   });
