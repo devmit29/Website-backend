@@ -44,17 +44,31 @@ app.post('/send-email', async (req, res) => {
         },
     });
     let mailOptions = {
-        from: 'devmittal37@gmail.com',
-        to: email,
-        subject: 'Thank You for Reaching Out! 🌟',
-        text: `Hey! 
-          Thank you for visiting my portfolio and taking the time to connect with me! It means a lot to me, and I hope you found something interesting or inspiring on my website.
-          If you have any questions, feedback, or just want to chat about something cool, feel free to reply to this email—Id love to hear from you!
-          Looking forward to staying in touch.
-
-          Best regards,
-          Dev Mittal`,
-    };
+      from: 'devmittal37@gmail.com',
+      to: email,
+      subject: 'Thank You for Reaching Out! 🌟',
+      text: `Hey!\n\n
+  
+      Thank you for visiting my portfolio and taking the time to connect with me! It means a lot to me, and I hope you found something interesting or inspiring on my website.\n
+      
+      If you have any questions, feedback, or just want to chat about something cool, feel free to reply to this email—I’d love to hear from you!\n
+      
+      Looking forward to staying in touch.\n
+      
+      Best regards,\n
+      Dev Mittal\n
+      +91-7976186965`,
+          html: `
+              <p>Hey!</p>
+              <p>Thank you for visiting my portfolio and taking the time to connect with me! It means a lot to me, and I hope you found something interesting or inspiring on my website.</p>
+              <p>If you have any questions, feedback, or just want to chat about something cool, feel free to reply to this email—I’d love to hear from you!</p>
+              <p>Looking forward to staying in touch.</p>
+              <br>
+              <p>Best regards,</p>
+              <p><strong>Dev Mittal</strong></p>
+          `,
+  };
+  
     try {
         await transporter.sendMail(mailOptions);
         res.status(200).send('Email sent successfully');
