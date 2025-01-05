@@ -43,6 +43,17 @@ app.post('/send-email', async (req, res) => {
             pass: (process.env.APP_PASSWORD), // Use an app-specific password if using Gmail
         },
     });
+    const signature = `
+    <div>
+      <p>Thanks & Regards,</p>
+      <p><strong>Dev Mittal</strong><br />
+         B.Tech. in Computer Science and Engineering<br />
+         The LNM Institute of Information Technology,<br />
+         Jaipur - 302031 <br/>
+         +91-9660081317
+      </p>
+    </div>
+  `;
     let mailOptions = {
       from: 'devmittal37@gmail.com',
       to: email,
@@ -63,9 +74,9 @@ app.post('/send-email', async (req, res) => {
               <p>Thank you for visiting my portfolio and taking the time to connect with me! It means a lot to me, and I hope you found something interesting or inspiring on my website.</p>
               <p>If you have any questions, feedback, or just want to chat about something cool, feel free to reply to this email—I’d love to hear from you!</p>
               <p>Looking forward to staying in touch.</p>
-              <br>
-              <p>Best regards,</p>
-              <p><strong>Dev Mittal</strong></p>
+              <br/>
+              <br/>
+              ${signature}
           `,
   };
   
