@@ -46,8 +46,14 @@ app.post('/send-email', async (req, res) => {
     let mailOptions = {
         from: 'devmittal37@gmail.com',
         to: email,
-        subject: 'Welcome!',
-        text: 'Thank you for connecting with us!',
+        subject: 'Thank You for Reaching Out! 🌟',
+        text: `Hey! 
+          Thank you for visiting my portfolio and taking the time to connect with me! It means a lot to me, and I hope you found something interesting or inspiring on my website.
+          If you have any questions, feedback, or just want to chat about something cool, feel free to reply to this email—Id love to hear from you!
+          Looking forward to staying in touch.
+
+          Best regards,
+          Dev Mittal`,
     };
     try {
         await transporter.sendMail(mailOptions);
