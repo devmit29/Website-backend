@@ -58,4 +58,4 @@ async function sendMail(req, res) {
       }
 }
 
-export default sendMail;
+export { sendMail };

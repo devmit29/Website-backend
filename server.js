@@ -5,8 +5,8 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const getProjects = require('./controllers/get-projects');
-const { default: sendMail } = require('./controllers/send-mail');
+const getProjects = require('./controllers/projects.js');
+const {sendMail} = require('./controllers/send-mail.js');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 app.get('/api/projects', getProjects);
 
 
-app.post('/send-email', sendMail);
+app.post('//api/send-email', sendMail);
 app.post('/api/contact', async (req, res) => {
     const { name, email, phone, message } = req.body;
     
