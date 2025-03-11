@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const { default: getProjects } = require('./controllers/projects');
+const getProjects = require('./controllers/get-projects');
 const { default: sendMail } = require('./controllers/send-mail');
 
 const app = express();

@@ -69,4 +69,4 @@ function getProjects(req, res) {
    }
 }
 
-export default getProjects;
+module.exports = { getProjects };
