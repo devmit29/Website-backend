@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
 async function sendMail(req, res) {
     const { email } = req.body;
@@ -58,4 +58,4 @@ async function sendMail(req, res) {
       }
 }
 
-export { sendMail };
+module.exports = { sendMail };
