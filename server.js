@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 app.get('/api/projects', getProjects);
 
 
-app.post('//api/send-email', sendMail);
+app.post('/api/send-email', sendMail);
 app.post('/api/contact', async (req, res) => {
     const { name, email, phone, message } = req.body;
     
