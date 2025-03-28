@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const getProjects = require('./controllers/projects.js');
-const {sendMail} = require('./controllers/send-mail.cjs');
+const {sendMail} = require('./controllers/send-mail.js');
 
 const app = express();
 const port = process.env.PORT || 3001;
